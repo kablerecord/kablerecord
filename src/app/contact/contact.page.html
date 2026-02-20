@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar style="--background: #374151; --color: #f9fafb;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" style="--color: #fbbf24;"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Contact Me</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Hero Section -->
+  <div style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%); padding: 4rem 1rem; text-align: center; color: white;">
+    <h1 style="font-size: 2.5rem; font-weight: bold; margin-bottom: 1rem;">Let's Connect</h1>
+    <p style="font-size: 1.25rem; color: #bfdbfe; max-width: 600px; margin: 0 auto;">
+      Whether you have questions about the book, want to discuss building businesses, or just want to connect—I'd love to hear from you.
+    </p>
+  </div>
+
+  <!-- Contact Form Section -->
+  <section style="padding: 3rem 1rem; background: #4b5563;">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <form (ngSubmit)="submitForm()">
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; color: #f9fafb; font-weight: 600; margin-bottom: 0.5rem; font-size: 1.125rem;">Your Name</label>
+          <input type="text" [(ngModel)]="formData.name" name="name" required
+                 style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: 2px solid #6b7280; background: #374151; color: #f9fafb; font-size: 1rem;"
+                 placeholder="John Doe">
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="display: block; color: #f9fafb; font-weight: 600; margin-bottom: 0.5rem; font-size: 1.125rem;">Your Email</label>
+          <input type="email" [(ngModel)]="formData.email" name="email" required
+                 style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: 2px solid #6b7280; background: #374151; color: #f9fafb; font-size: 1rem;"
+                 placeholder="john@example.com">
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+          <label style="display: block; color: #f9fafb; font-weight: 600; margin-bottom: 0.5rem; font-size: 1.125rem;">Your Message</label>
+          <textarea [(ngModel)]="formData.message" name="message" required rows="6"
+                    style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: 2px solid #6b7280; background: #374151; color: #f9fafb; font-size: 1rem; resize: vertical;"
+                    placeholder="Tell me what's on your mind..."></textarea>
+        </div>
+
+        <button type="submit"
+                style="width: 100%; background: #eab308; color: #000; padding: 1.25rem; border: none; border-radius: 0.5rem; font-size: 1.125rem; font-weight: bold; cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 14px rgba(234, 179, 8, 0.4);"
+                onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(234, 179, 8, 0.5)'"
+                onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 14px rgba(234, 179, 8, 0.4)'">
+          SEND MESSAGE
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Alternative Contact Methods -->
+  <section style="padding: 3rem 1rem; background: #374151; text-align: center;">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <h2 style="font-size: 1.75rem; font-weight: bold; color: #fbbf24; margin-bottom: 1.5rem;">Other Ways to Connect</h2>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+        <a href="mailto:kablerecord@gmail.com" style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem; background: #4b5563; border-radius: 0.5rem; color: #f9fafb; text-decoration: none; transition: all 0.2s;" onmouseover="this.style.background='#6b7280'" onmouseout="this.style.background='#4b5563'">
+          <ion-icon name="mail" style="font-size: 1.5rem; color: #fbbf24;"></ion-icon>
+          <span style="font-weight: 600;">kablerecord@gmail.com</span>
+        </a>
+      </div>
+
+      <p style="color: #d1d5db; margin-bottom: 1.5rem;">Connect with me on social media:</p>
+
+      <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+        <a href="https://www.youtube.com/@kablerecord" target="_blank" style="color: #f9fafb; transition: color 0.2s;" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#f9fafb'">
+          <ion-icon name="logo-youtube" style="font-size: 2.5rem;"></ion-icon>
+        </a>
+        <a href="https://instagram.com/kablerecord" target="_blank" style="color: #f9fafb; transition: color 0.2s;" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#f9fafb'">
+          <ion-icon name="logo-instagram" style="font-size: 2.5rem;"></ion-icon>
+        </a>
+        <a href="https://twitter.com/kablerecord" target="_blank" style="color: #f9fafb; transition: color 0.2s;" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#f9fafb'">
+          <ion-icon name="logo-twitter" style="font-size: 2.5rem;"></ion-icon>
+        </a>
+        <a href="https://www.linkedin.com/in/kable-record-4817ab13" target="_blank" style="color: #f9fafb; transition: color 0.2s;" onmouseover="this.style.color='#fbbf24'" onmouseout="this.style.color='#f9fafb'">
+          <ion-icon name="logo-linkedin" style="font-size: 2.5rem;"></ion-icon>
+        </a>
+      </div>
+    </div>
+  </section>
+</ion-content>
